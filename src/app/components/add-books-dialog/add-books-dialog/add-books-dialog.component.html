@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Hi {{data.title}}</h1>
+<div mat-dialog-content>
+    <div>
+        <img [src]="data.cover" />
+    </div>
+
+    <div>
+        <h2>{{data.author}}</h2>
+        <h3>{{data.year}}</h3>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="dialogRef.close(data)" cdkFocusInitial>Accept</button>
+    <button mat-button (click)="dialogRef.close()">Cancel</button>
+</div>

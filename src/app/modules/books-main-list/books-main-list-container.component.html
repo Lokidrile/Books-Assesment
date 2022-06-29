@@ -1,1 +1,4 @@
-<p>books-main-list-container works!</p>
+
+<books-main-list-table (newWishlistBook)="onBookHasAddedToWishList($event)"></books-main-list-table>
+<mat-divider></mat-divider>
+<books-wishlist-table [newBookToList]="bookToWishList"></books-wishlist-table>
