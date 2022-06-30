@@ -1,0 +1,20 @@
+@import '../../shared/globals/styles/colors';
+
+.filter-container {
+    float: left;
+    margin-bottom: 1%;
+}
+
+.table-container {
+    padding: 0 1% 1% 1%;
+
+    .divider{
+        width: 100%;
+        display: block;
+        margin: 0;
+        border-top-width: 2px;
+        border-top-style: solid;
+        border-top-color: $blue-bottom-borders;
+        height: 3px !important;
+    }
+}

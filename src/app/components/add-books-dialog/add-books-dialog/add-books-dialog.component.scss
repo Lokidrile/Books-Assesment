@@ -1,0 +1,25 @@
+@import '../../../shared/globals/styles/colors';
+
+.modal-container {
+    text-align: center;
+
+    .button-ok {
+        width: 100px;
+        background-color: $blue-primary;
+        border: none;
+        border-radius: 3px;
+        margin-right: 6px;
+        height: 30px;
+        color: $white;
+    }
+
+    .button-cancel {
+        width: 100px;
+        background-color: $white;
+        border: 1px solid $blue-bottom-borders;
+        border-radius: 3px;
+        margin-left: 6px;
+        height: 30px;
+        color: $blue-primary;
+    }
+}

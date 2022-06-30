@@ -1,0 +1,19 @@
+@import '../../../shared/globals/styles/colors.scss';
+
+.filter-container{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 1%;
+    float: right;
+    width: 400px;
+
+    .search-box{
+        height: 25px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid 2px $blue-bottom-borders;
+        width: 400px;
+        font-size: 18px;
+    }
+}
