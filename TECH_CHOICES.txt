@@ -1,0 +1,4 @@
+
+I have chosen to build the project on modules in order to create bigger projects where this modules can be exported to another sections and be reused. 
+The components file contains all those components which can be reused such as buttons, filters, modals.
+
