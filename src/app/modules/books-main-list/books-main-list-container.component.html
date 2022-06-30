@@ -1,5 +1,5 @@
 <div class="table-container">
     <books-main-list-table (newWishlistBook)="onBookHasAddedToWishList($event)"></books-main-list-table>
     <div class="divider"></div>
-    <books-wishlist-table [newBookToList]="bookToWishList"></books-wishlist-table>
+    <books-wishlist-table [newBookToList]="bookToWishList" (newMainlistBook)="onBookHasAddedToWishList($event)"></books-wishlist-table>
 </div>

@@ -2,3 +2,10 @@
 I have chosen to build the project on modules in order to create bigger projects where this modules can be exported to another sections and be reused. 
 The components file contains all those components which can be reused such as buttons, filters, modals.
 
+
+THINGS THAT MIGHT BE UPGRADED
+
+I re-thinked the component table to be a generic one and passing the rows, columns and headers, datasource etc as inputs. 
+I need to increase the testing coverage, i just added 2 to show the way i'd do those tests. 
+Validate in deep all the paths that code could follow
+Refactor and simplify some functions as well to refactor repetitives and placed on the helper class service. 

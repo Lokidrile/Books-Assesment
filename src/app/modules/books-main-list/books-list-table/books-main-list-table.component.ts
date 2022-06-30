@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {MatTableDataSource} from '@angular/material/table';
 import { AddBooksDialogComponent } from 'src/app/components/add-books-dialog/add-books-dialog/add-books-dialog.component';
@@ -16,6 +16,9 @@ export class BooksMainListTableComponent implements OnInit {
   @Output()
   public newWishlistBook = new EventEmitter<Book>();
   
+  @Input()
+  newBookToList!: Book;
+
   displayedColumns: string[] = ['cover','title', 'author', 'year', 'genres', 'price', 'toWishList'];
   dataSource!: MatTableDataSource<Book>;
 
@@ -30,7 +33,15 @@ export class BooksMainListTableComponent implements OnInit {
       result => {
         this.dataSource = new MatTableDataSource(result);
       }
-    )
+    );
+
+    this.booksHelper.updatedMainBook$.subscribe((bookId) => {
+      if (this.newBookToList.id === bookId &&
+          this.dataSource &&
+          this.booksHelper.isBookOnListAlready(this.dataSource.data, this.newBookToList)) {
+        this.dataSource.data.push(this.newBookToList);
+      }
+    });
   }
 
   onApplyFilter(value: string): void {
@@ -45,7 +56,7 @@ export class BooksMainListTableComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.newWishlistBook.emit(result);
-        const newList = this.booksHelper.setNewMainBooksList(this.dataSource.data, result);
+        const newList = this.booksHelper.setNewBooksList(this.dataSource.data, result);
         this.dataSource = new MatTableDataSource(newList);
       }
     });

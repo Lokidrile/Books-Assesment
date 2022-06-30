@@ -34,6 +34,15 @@
       <th mat-header-cell *matHeaderCellDef> Price </th>
       <td mat-cell *matCellDef="let book"> {{book.price | currency: 'USD'}} </td>
     </ng-container>
+
+    <ng-container matColumnDef="toMainList">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let book"> 
+        <button mat-flat-button class="button-wishlist" (click)="onRemoveBookToWishList(book)">
+          <mat-icon>remove</mat-icon> Remove from WishList
+        </button>
+      </td>
+    </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
