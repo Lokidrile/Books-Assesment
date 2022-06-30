@@ -1,0 +1,30 @@
+@import '../../../shared/globals/styles/colors';
+
+.table-subcontainer {
+    margin-bottom: 1%;
+    height: 45% !important;
+
+    .books-table {
+        width: 100%;
+        text-align: center;
+
+        th {
+            text-align: center;
+        }
+
+        .table-image {
+            width: 50px;
+            margin-top: 5px;
+        }
+
+        .button-wishlist {
+            text-align: center;
+            background-color: $blue-primary;
+            border: none;
+            color: $white-text;
+            border-radius: 4px;
+            padding: 1%;
+
+        }
+    }  
+}

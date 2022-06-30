@@ -1,6 +1,5 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-import { takeWhile } from 'rxjs';
 import { Book } from 'src/app/shared/models/books.model';
 import { BooksHelperService } from 'src/app/shared/services/books-helper.service';
 import { BooksService } from 'src/app/shared/services/books.service';
@@ -35,10 +34,6 @@ export class BooksWishlistTableComponent implements OnInit, OnDestroy {
         this.dataSource.data.push(this.newBookToList);
       }
     });
-  }
-
-  onApplyFilter(value: string): void {
-    this.dataSource.filter = value;
   }
 
   ngOnDestroy(): void {

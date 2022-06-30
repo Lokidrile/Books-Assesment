@@ -1,0 +1,18 @@
+.table-subcontainer {
+    margin: 1% 0;
+    height: 45% !important;
+
+    .books-table {
+        width: 100%;
+        text-align: center;
+
+        th {
+            text-align: center;
+        }
+
+        .table-image {
+            width: 50px;
+            margin-top: 5px;
+        }
+    }  
+}

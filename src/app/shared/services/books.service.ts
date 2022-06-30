@@ -1,4 +1,3 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
 import { BOOKS_LIST } from '../mocks/books.mock';
@@ -9,7 +8,7 @@ import { Book } from '../models/books.model';
 })
 export class BooksService {
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   getBooksList(): Observable<Book[]> {
     return of(BOOKS_LIST).pipe(
@@ -18,7 +17,7 @@ export class BooksService {
           book.genreString = book.genres.join(', ');
           return book;
         }).filter((book) => {
-          return !book.inWishList;
+          return !book.inWishList && book.available;
         })
       })
     );
@@ -31,7 +30,7 @@ export class BooksService {
           book.genreString = book.genres.join(', ');
           return book;
         }).filter((book) => {
-          return book.inWishList;
+          return book.inWishList && !book.available;
         })
       })
     );
