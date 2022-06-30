@@ -8,6 +8,7 @@ import { Book } from '../models/books.model';
 export class BooksHelperService {
 
   updatedBook$: Subject<string> =  new Subject<string>();
+  updatedMainBook$: Subject<string> =  new Subject<string>();
 
   constructor() { }
 
@@ -15,7 +16,15 @@ export class BooksHelperService {
     this.updatedBook$.next(bookId);
   }
 
-  setNewMainBooksList(booksList: Book[], bookToRemove: Book): Book[] { 
+  updatedMainBook(bookId: string): void {
+    this.updatedMainBook$.next(bookId);
+  }
+
+  setNewBooksList(booksList: Book[], bookToRemove: Book): Book[] { 
     return booksList.filter((book) => { book.id !== bookToRemove.id });
+  }
+
+  isBookOnListAlready(booksList: Book[], bookToSearch: Book): boolean {
+    return booksList.filter((book) => { book.id !== bookToSearch.id }).length <= 0;
   }
 }

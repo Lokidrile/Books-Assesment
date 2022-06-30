@@ -10,6 +10,7 @@ import { BooksHelperService } from 'src/app/shared/services/books-helper.service
 })
 export class BooksListContainerComponent implements OnInit {
   bookToWishList!: Book;
+  bookToMainList!: Book;
   observable1 = new Observable();
   observable2 = new Observable();
   constructor(private booksHelper: BooksHelperService) { }
@@ -20,5 +21,10 @@ export class BooksListContainerComponent implements OnInit {
   onBookHasAddedToWishList(newBook: Book): void {
     this.bookToWishList = newBook;
     this.booksHelper.updatedBook(newBook.id);
+  }
+
+  onBookHasAddedToMainList(newBook: Book): void {
+    this.bookToMainList = newBook;
+    this.booksHelper.updatedMainBook(newBook.id);
   }
 }
