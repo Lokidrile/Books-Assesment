@@ -1,3 +1,5 @@
+@import '../../../shared/globals/styles/colors';
+
 .table-subcontainer {
     margin: 1% 0;
     height: 45% !important;
@@ -13,6 +15,18 @@
         .table-image {
             width: 50px;
             margin-top: 5px;
+        }
+
+        .button-wishlist {
+            text-align: center;
+            background-color: $blue-secondary;
+            border: none;
+            color: $white-text;
+            border-radius: 4px;
+            padding: 1.5% 3%;
+            border: $blue-bottom-borders solid 1px;
+            box-shadow: 0.5px 0.5px $blue-bottom-borders;
+            width: 9em;
         }
     }  
 }
