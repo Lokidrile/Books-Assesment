@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BooksMainListModule } from './modules/books-main-list/books-main-list.module';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -12,9 +13,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BooksMainListModule,
-    MatToolbarModule
+    MatToolbarModule,
   ],
   providers: [BrowserAnimationsModule],
   bootstrap: [AppComponent]

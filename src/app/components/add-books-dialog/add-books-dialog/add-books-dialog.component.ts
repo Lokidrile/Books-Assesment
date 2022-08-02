@@ -14,6 +14,6 @@ export class AddBooksDialogComponent {
       @Inject(MAT_DIALOG_DATA)
       public data: Book,
       public dialogRef: MatDialogRef<AddBooksDialogComponent>
-    ) { }
+    ) { console.log(data) }
 
 }
